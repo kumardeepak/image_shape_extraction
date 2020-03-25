@@ -23,6 +23,8 @@ def main(argv):
 
     tables, lines = detect_tables_and_lines(inputfile)
     print('no. of tables: %d, no. of lines: %d' % (len(tables), len(lines)))
+    print(tables)
+    print(lines)
     
 if __name__ == "__main__":
     main(sys.argv[1:])
