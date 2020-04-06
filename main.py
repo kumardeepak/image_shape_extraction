@@ -1,5 +1,5 @@
 import sys, getopt
-from src.process import detect_tables_and_lines
+from src.process import detect_tables_and_lines, detect_tables_and_lines_v1
 
 def main(argv):
     inputfile = ''
@@ -21,10 +21,12 @@ def main(argv):
             inputfile = arg
     print('received inputfile [%s]' % (inputfile))
 
-    tables, lines = detect_tables_and_lines(inputfile)
-    print('no. of tables: %d, no. of lines: %d' % (len(tables), len(lines)))
+    tables, lines = detect_tables_and_lines_v1(inputfile)
+    
     print(tables)
     print(lines)
-    
+    print('no. of tables: {%d}, no. of lines: {%d}' % (len(tables), len(lines)))
+
+
 if __name__ == "__main__":
     main(sys.argv[1:])
